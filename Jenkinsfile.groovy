@@ -10,8 +10,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                def command = "python test_calculator.py"
-                def proc = command.execute()
+                
+                def proc = 'test_calculator.py'.execute()
             }
         }
         stage('Deploy') {
