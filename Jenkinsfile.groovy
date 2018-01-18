@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                files = findFiles(glob: '*.groovy*')
+                def files = findFiles(glob: '*.groovy*')
             }
         }
         stage('Deploy') {
