@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Unit test') {
           steps {
-            sh 'bat \'python test_calculator.py\''
+            bat 'python test_calculator.py'
           }
         }
       }
