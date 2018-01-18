@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 
-                def proc = 'test_calculator.py'.execute()
+                sh 'python test_calculator.py'
             }
         }
         stage('Deploy') {
