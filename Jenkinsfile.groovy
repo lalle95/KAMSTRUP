@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                def cmd = python test_calculator.py
+                "python test_calculator.py".execute()
             }
         }
         stage('Deploy') {
