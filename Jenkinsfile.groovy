@@ -1,23 +1,52 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+  agent any
+  stages {
+    stage('build') {
+      parallel {
+        stage('print') {
+          steps {
+            echo 'building ...'
+          }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                
-                bat 'python test_calculator.py'
-            }
+        stage('print parallel') {
+          steps {
+            echo 'building in parallel ...'
+          }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+      }
     }
+    stage('test') {
+      parallel {
+        stage('print') {
+          steps {
+            echo 'testing ... '
+          }
+        }
+        stage('print parallel') {
+          steps {
+            echo 'testing in parallel ...'
+          }
+        }
+        stage('Unit test') {
+          steps {
+            bat 'python test_calculator.py'
+          }
+        }
+      }
+    }
+    stage('deploy') {
+      parallel {
+        stage('print') {
+          steps {
+            echo 'deploying ...'
+          }
+        }
+        stage('print parallel') {
+          steps {
+            echo 'deploying in parallel ...'
+          }
+        }
+      }
+    }
+  }
 }
