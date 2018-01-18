@@ -10,6 +10,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                new File("test").eachFileMatch(~/.*.txt/) { file ->
+                  println file.getName()
+                }
             }
         }
         stage('Deploy') {
