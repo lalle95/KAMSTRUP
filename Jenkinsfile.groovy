@@ -25,6 +25,7 @@ pipeline {
         stage('print parallel') {
           steps {
             echo 'testing in parallel ...'
+            echo 'test change'
           }
         }
         stage('Unit test') {
