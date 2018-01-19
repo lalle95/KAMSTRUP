@@ -8,9 +8,9 @@ pipeline {
             }
         }
         stage('Test') {
-            agent {
-                bat docker { image 'busybox' }
-            }
+            //agent {
+                //bat docker { image 'busybox' }
+            //}
             steps {
                 echo 'Testing..'
             }
