@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Front-end') {
             agent {
-                bat docker '{ image 'node:7-alpine' }
+                bat 'docker { image 'node:7-alpine' }'
             }
             steps {
                 bat 'node --version'
