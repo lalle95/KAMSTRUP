@@ -6,7 +6,7 @@ pipeline {
                 docker 'busybox'
             }
             steps {
-                sh 'ls'
+                bat 'ls'
             }
         }
         stage('Front-end') {
@@ -14,7 +14,7 @@ pipeline {
                 docker 'busybox' 
             }
             steps {
-                sh 'uptime'
+                bat 'uptime'
             }
         }
     }
