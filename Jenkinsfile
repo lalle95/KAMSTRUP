@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                bat 'docker { image 'maven:3-alpine' }'
+                docker { image 'maven:3-alpine' }
             }
             steps {
                 bat 'mvn --version'
@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Front-end') {
             agent {
-                bat 'docker { image 'node:7-alpine' }'
+                docker { image 'node:7-alpine' }
             }
             steps {
                 bat 'node --version'
