@@ -1,14 +1,14 @@
 pipeline {
-    agent 'busybox'
+    agent none 
     stages {
-        stage('Back-end') {
-            steps {
-                bat 'ls'
+        stage('Build') { 
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
             }
-        }
-        stage('Front-end') {
             steps {
-                bat 'uptime'
+                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
             }
         }
     }
