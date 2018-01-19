@@ -3,6 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                bat docker { image 'busybox' }
+            }
             steps {
                 echo 'Building..'
             }
@@ -16,6 +19,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            agent {
+                bat docker { image 'busybox' }
+            }
             steps {
                 echo 'Deploying....'
             }
