@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                docker 'maven:7-alpine'
+                docker 'busybox'
             }
             steps {
-                bat 'mvn --version'
+                sh 'ls'
             }
         }
         stage('Front-end') {
             agent {
-                docker 'node:7-alpine' 
+                docker 'busybox' 
             }
             steps {
-                bat 'node --version'
+                sh 'uptime'
             }
         }
     }
