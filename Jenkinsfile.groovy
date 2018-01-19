@@ -11,13 +11,13 @@ pipeline {
 
         stage('Test') {
             agent {
-                docker { image 'busybox' }
+                bat docker { image 'busybox' }
             }
             steps {
                 echo 'Testing..'
             }
         }
-        
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
