@@ -1,6 +1,6 @@
 pipeline {
 
-    agent any
+    agent none
 
     //agent {
     //    docker {image 'busybox:latest'} 
@@ -9,8 +9,14 @@ pipeline {
     stages {
 
         stage('build') {
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
+            }
+
             steps {
-                echo 'build'
+                sh 'python test_calculator.py'
             }
         }
 
