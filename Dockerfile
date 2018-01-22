@@ -1,6 +1,4 @@
-FROM python 
+FROM node:7-alpine
 
-COPY . /src 
-
-
+RUN apk add -U subversion
 

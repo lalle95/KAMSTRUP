@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                bat 'python src/helloworld.py'
+                bat 'node --version'
+                bat 'svn --version'
             }
         }
     }
