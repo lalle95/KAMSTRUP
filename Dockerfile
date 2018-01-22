@@ -1,0 +1,6 @@
+FROM python 
+
+COPY . /src 
+
+
+
