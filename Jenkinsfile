@@ -11,6 +11,7 @@ pipeline {
                 //bat 'cd home'
                 //bat 'g++ -o HelloWorld helloworld.cpp'
                 //bat './HelloWorld'
+                bat 'python --version'
                 echo 'build'
             }
         }
