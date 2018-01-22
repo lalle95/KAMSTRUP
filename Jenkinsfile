@@ -1,7 +1,8 @@
 pipeline {
-    agent {
-        docker {image 'busybox:latest'} 
-    }
+    agent any
+    //agent {
+    //    docker {image 'busybox:latest'} 
+    //}
     stages {
         stage('build') {
             steps {
