@@ -11,12 +11,12 @@ pipeline {
         stage("build") {
             agent {
                 docker {
-                    image "busybox" 
+                    image "gcc" 
                 }
             }
 
             steps {
-                bat "ls"
+                sh "ls"
             }
         }
         /*
