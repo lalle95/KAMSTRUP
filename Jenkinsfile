@@ -11,12 +11,12 @@ pipeline {
         stage('build') {
             agent {
                 docker {
-                    image 'python:2-alpine' 
+                    image 'busybox' 
                 }
             }
 
             steps {
-                sh 'python test_calculator.py'
+                sh 'ls'
             }
         }
         /*
