@@ -8,15 +8,15 @@ pipeline {
   
     stages {
 
-        stage('build') {
+        stage("build") {
             agent {
                 docker {
-                    image 'busybox' 
+                    image "busybox" 
                 }
             }
 
             steps {
-                sh 'ls'
+                bat "ls"
             }
         }
         /*
