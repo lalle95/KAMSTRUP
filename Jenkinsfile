@@ -19,7 +19,7 @@ pipeline {
                 sh 'python test_calculator.py'
             }
         }
-
+        /*
         stage('test') {
             steps {
                 echo 'test'
@@ -31,5 +31,6 @@ pipeline {
                 echo 'deploy'
             }
         }
+        */
     }
 }
