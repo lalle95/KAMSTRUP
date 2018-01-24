@@ -9,11 +9,11 @@ pipeline {
     stages {
 
         stage("build") {
-            agent {
+            /*agent {
                 docker {
                     image "gcc" 
                 }
-            }
+            }*/
 
             steps {
                 sh "ls"
