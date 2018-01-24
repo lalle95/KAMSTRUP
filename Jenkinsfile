@@ -8,12 +8,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                mail body: 'project run successful',
-                     from: 'lli@kamstrup.com',
-                     replyTo: 'lli@kamstrup.com',
-                     subject: 'test message from jenkins',
-                     to: "gag@kamstrup.com"
-    
+                sh 'ls'
             }
             
         }
