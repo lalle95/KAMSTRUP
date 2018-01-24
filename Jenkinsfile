@@ -1,5 +1,12 @@
-node("docker") {
-    docker.image('gcc').inside {
-        sh 'ls'
+pipeline {
+    agent {
+        docker { image 'busybox' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'ls'
+            }
+        }
     }
 }
