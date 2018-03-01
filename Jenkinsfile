@@ -1,20 +1,9 @@
 pipeline {
-    agent {label 'slave'}
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('Back-end') {
-            agent {
-                docker { image 'maven:3-alpine' 
-                         args '-u root:root'}
-            }
-            steps {
-                sh 'mvn --version'
-            }
-        }
-        stage('Front-end') {
-            agent {
-                docker { image 'node'
-                         args '-u root:root' }
-            }
+        stage('Test') {
             steps {
                 sh 'node --version'
             }
