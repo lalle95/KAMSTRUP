@@ -1,14 +1,20 @@
 pipeline {
     agent {label 'slave'}
     stages {
-        stage('build') {
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
             steps {
-                sh 'pwd'    
+                sh 'mvn --version'
             }
         }
-        stage('deploy') {
+        stage('Front-end') {
+            agent {
+                docker { image 'node:7-alpine' }
+            }
             steps {
-                sh 'ls'
+                sh 'node --version'
             }
         }
     }
